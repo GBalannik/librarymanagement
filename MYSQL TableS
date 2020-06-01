@@ -1,0 +1,28 @@
+CREATE TABLE `materialLoan` (
+  `LoanID` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `iduser` int(11) DEFAULT NULL,
+  `MaterialID` int(11) DEFAULT NULL,
+  `StartDate` date DEFAULT NULL,
+  `EndDate` date DEFAULT NULL,
+  `ReturnDate` date DEFAULT NULL,
+  PRIMARY KEY (`LoanID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `materials` (
+  `MaterialID` int(11) DEFAULT NULL,
+  `Title` varchar(45) DEFAULT NULL,
+  `Author` varchar(45) DEFAULT NULL,
+  `MaterialType` varchar(45) DEFAULT NULL,
+  `YearPublished` int(11) DEFAULT NULL,
+  `Status` varchar(45) DEFAULT 'Available'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `user` (
+  `FirstName` varchar(45) NOT NULL,
+  `LastName` varchar(45) NOT NULL,
+  `EmailAddress` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `iduser` int(11) NOT NULL,
+  `Gender` varchar(45) NOT NULL,
+  `DateofBirth` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
